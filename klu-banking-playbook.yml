@@ -1,0 +1,28 @@
+- name: Automate KL University Online Banking System Setup using Ansible
+  hosts: localhost
+  connection: local
+
+  vars:
+    project_path: /Users/maddinenijitendra/Downloads/KL-Online-Banking-System
+
+  tasks:
+
+    - name: Install Node.js using Homebrew
+      homebrew:
+        name: node
+        state: present
+
+    - name: Ensure npm dependencies are installed
+      command: npm install
+      args:
+        chdir: "{{ project_path }}"
+
+    - name: Build the React application
+      command: npm run build
+      args:
+        chdir: "{{ project_path }}"
+
+    - name: Print success message
+      debug:
+        msg: "KLU Online Banking System successfully built using Ansible!"
+

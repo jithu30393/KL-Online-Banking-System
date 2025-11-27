@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: klu-banking-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: klu-banking
+  template:
+    metadata:
+      labels:
+        app: klu-banking
+    spec:
+      containers:
+        - name: klu-banking-container
+          image: jithumaddineni/klu-banking-system:latest
+          ports:
+            - containerPort: 80
+       

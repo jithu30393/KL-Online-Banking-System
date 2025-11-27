@@ -1,0 +1,13 @@
+- name: Start KL Banking System React App
+  hosts: localhost
+  connection: local
+
+  vars:
+    project_path: /Users/maddinenijitendra/Downloads/KL-Online-Banking-System
+
+  tasks:
+    - name: Start React dev server
+      command: npm start
+      args:
+        chdir: "{{ project_path }}"
+
