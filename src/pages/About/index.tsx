@@ -16,7 +16,7 @@ export default function About() {
           <p>
             Github: <a href="https://github.com/jithu30393">Me</a> |{" "}
             <a href="https://github.com/2300031582">Snehith</a> |{" "}
-            <a href="https://github.com/2300031581">Akshay</a>
+            <a href="https://github.com/akshaynithin">Akshay</a>
           </p>
         </div>
 

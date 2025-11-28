@@ -10,4 +10,3 @@
       command: npm start
       args:
         chdir: "{{ project_path }}"
-

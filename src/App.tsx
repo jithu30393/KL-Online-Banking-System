@@ -15,18 +15,20 @@ import Withdraw from "./pages/Withdraw";
 import Finances from "./pages/Finances";
 import SuccessTransaction from "./pages/SuccessTransaction";
 
+// ✅ Loan Page Import
+import Loan from "./pages/Loan";
+
 import tux from "./assets/images/tux.png";
 import navicon from "./assets/images/menu.svg";
 
 export default function App() {
   const [sidebar, setSidebar] = useState(false);
 
-  const toggleSidebar = () => {
-    setSidebar(!sidebar);
-  };
+  const toggleSidebar = () => setSidebar(!sidebar);
 
   return (
     <div className="app">
+
       {/* Header */}
       <header className="headerContainer">
         <div className="leftSide">
@@ -54,38 +56,14 @@ export default function App() {
         className="sidebar"
       >
         <div className="sidebarContent">
-          <a
-            style={sidebar ? { display: "block" } : { display: "none" }}
-            className="sidebarItem"
-            href="/"
-          >
-            Home
-          </a>
-          <a
-            style={sidebar ? { display: "block" } : { display: "none" }}
-            className="sidebarItem"
-            href="/signup"
-          >
-            Sign Up
-          </a>
-          <a
-            style={sidebar ? { display: "block" } : { display: "none" }}
-            className="sidebarItem"
-            href="/signin"
-          >
-            Login
-          </a>
-          <a
-            style={sidebar ? { display: "block" } : { display: "none" }}
-            className="sidebarItem"
-            href="/about"
-          >
-            About Us
-          </a>
+          <a style={sidebar ? { display: "block" } : { display: "none" }} className="sidebarItem" href="/">Home</a>
+          <a style={sidebar ? { display: "block" } : { display: "none" }} className="sidebarItem" href="/signup">Sign Up</a>
+          <a style={sidebar ? { display: "block" } : { display: "none" }} className="sidebarItem" href="/signin">Login</a>
+          <a style={sidebar ? { display: "block" } : { display: "none" }} className="sidebarItem" href="/about">About Us</a>
         </div>
       </aside>
 
-      {/* Routes */}
+      {/* ROUTES */}
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
@@ -101,9 +79,12 @@ export default function App() {
         <Route path="/withdraw" element={<Withdraw />} />
         <Route path="/finances" element={<Finances />} />
         <Route path="/success-transaction" element={<SuccessTransaction />} />
+
+        {/* ✅ LOAN PAGE ROUTE */}
+        <Route path="/loan" element={<Loan />} />
       </Routes>
 
-      {/* Footer */}
+      {/* FOOTER */}
       <footer className="footerContainer">
         <div className="footerContent">
           <div className="linksArea">
@@ -113,6 +94,7 @@ export default function App() {
               <li><a href="https://reactjs.org/">ReactJS</a></li>
               <li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
             </ul>
+
             <ul>
               <li>Sources:</li>
               <li><a href="https://wiki.gentoo.org/wiki/Main_Page">Gentoo Wiki</a></li>
@@ -128,6 +110,7 @@ export default function App() {
           />
         </div>
       </footer>
+
     </div>
   );
 }

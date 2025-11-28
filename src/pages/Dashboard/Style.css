@@ -1,105 +1,221 @@
+/* ======================================
+   MAIN DASHBOARD PAGE
+====================================== */
 .dashboardPage {
   width: 100%;
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: url(https://www.gnu.org/graphics/this-is-freedom-wallpaper.png) no-repeat center;
   background-size: cover;
+  padding-top: 40px;
 }
 
-.dashboardPage .dashboardContent {
+/* White container */
+.dashboardContent {
   width: 95%;
-  height: 700px;
-  margin: auto;
-  padding: 50px;
-  border-radius: 60px;
+  min-height: 700px;
+  padding: 40px;
+  border-radius: 40px;
+  background: #fff;
   box-shadow: 0 0 30px #00000085;
-  background-color: #ffffff;
 }
 
-/* Top Side */
-.dashboardPage .dashboardContent .dashboardTopside {
+/* ======================================
+   TOP SECTION
+====================================== */
+.dashboardTopSide {
   width: 100%;
-  height: 30vh;
+  text-align: center;
 }
 
-.dashboardPage .dashboardContent .dashboardTopside .topSideContent {
+.topSideContent {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-.dashboardPage .dashboardContent .dashboardTopside .topSideContent .showCreditButton {
-  background-color: #000;
+.showCreditButton,
+.withdrawButton,
+.loanButton {
+  background: #000;
   color: #fff;
-  border: 0;
-  outline: none;
   font-size: 16px;
   padding: 15px;
   border-radius: 20px;
+  width: 200px;
+  margin: 10px 0;
   cursor: pointer;
-  margin-top: 10px;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.showCreditButton:hover,
+.withdrawButton:hover,
+.loanButton:hover {
+  background: #333;
+}
+
+/* ======================================
+   CARDS SECTION (Debit + Credit Cards)
+====================================== */
+.cardsSection {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 15px;
+}
+
+.cardItem {
+  width: 200px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #0003;
+  text-align: center;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.cardItem:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px #0005;
+}
+
+.cardItem img {
+  width: 80px;
   margin-bottom: 10px;
 }
 
-.dashboardPage .dashboardContent .dashboardTopside .topSideContent .withdrawButton {
-  background-color: #000;
+.debitCard {
+  border-bottom: 5px solid #1e90ff;
+}
+
+.creditCard {
+  border-bottom: 5px solid #ef4444;
+}
+
+/* ======================================
+   ANALYTICS SECTION
+====================================== */
+.analyticsSection {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.analyticsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.analyticsCard {
+  width: 220px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #0003;
+  transition: 0.3s ease;
+}
+
+.analyticsCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px #0005;
+}
+
+.analyticsCard h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.analyticsCard p {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ======================================
+   CHART CARDS (Pie + Bar)
+====================================== */
+.chartCard {
+  width: 700px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #0003;
+}
+
+.chartCard h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+/* ======================================
+   EXPORT BUTTON
+====================================== */
+.exportButton {
+  background: #000;
   color: #fff;
-  border: 0;
-  outline: none;
+  padding: 15px 25px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
   font-size: 16px;
-  padding: 15px;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
-/* Bottom Side */
-.dashboardPage .dashboardContent .dashboardBottomside {
-  width: 100%;
-  height: calc(100vh - 30vh);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+.exportButton:hover {
+  background: #333;
 }
 
-.dashboardPage .dashboardContent .dashboardBottomside .extract {
-  box-shadow: 0 0 30px #00000085;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-right: 30px;
-  transition: all ease 0.6s;
-  background-color: #fff;
+/* ======================================
+   TRANSACTION HISTORY
+====================================== */
+.transactionsHistory {
+  margin-top: 50px;
+  text-align: center;
 }
 
-.dashboardPage .dashboardContent .dashboardBottomside .extract:hover {
-  background-color: #b9b9b9;
+.transactionsHistory ul {
+  list-style: none;
+  padding: 0;
 }
 
-.dashboardPage .dashboardContent .dashboardBottomside .finance {
-  box-shadow: 0 0 30px #00000085;
-  width: 200px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all ease 0.6s;
-  background-color: #fff;
-  margin-right: 30px;
+.transactionsHistory li {
+  margin: 10px auto;
+  width: 70%;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #0002;
+  font-size: 16px;
 }
 
-.dashboardPage .dashboardContent .dashboardBottomside .finance:hover {
-  background-color: #b9b9b9;
+.creditTx {
+  background: #d4f8d4;
+}
+
+.debitTx {
+  background: #ffd4d4;
+}
+
+/* ======================================
+   RESPONSIVE DESIGN
+====================================== */
+@media (max-width: 768px) {
+  .chartCard {
+    width: 95%;
+  }
+  .transactionsHistory li {
+    width: 90%;
+  }
+  .cardsContainer {
+    flex-direction: column;
+  }
 }
