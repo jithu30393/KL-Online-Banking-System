@@ -1,0 +1,225 @@
+.dashboardPage {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(https://www.gnu.org/graphics/this-is-freedom-wallpaper.png) no-repeat center;
+  background-size: cover;
+  padding: 20px;
+}
+
+.dashboardContent {
+  width: 95%;
+  min-height: 700px;
+  padding: 50px;
+  border-radius: 40px;
+  background: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+
+/* Top Section */
+.dashboardTopSide {
+  text-align: center;
+}
+
+.topSideContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topSideContent h1 {
+  margin: 10px 0;
+}
+
+.topSideContent h2 {
+  margin: 5px 0;
+  color: #555;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.showCreditButton,
+.withdrawButton {
+  background: black;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.showCreditButton:hover,
+.withdrawButton:hover {
+  background: #333;
+}
+
+/* Cards */
+.cardsSection {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.cardsSection h2 {
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.bankCard {
+  width: 340px;
+  height: 210px;
+  padding: 22px;
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bankCard:hover {
+  transform: translateY(-8px);
+}
+
+.creditCard {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.debitCard {
+  background: linear-gradient(135deg, #11998e, #38ef7d);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cardMiddle {
+  text-align: center;
+}
+
+.cardMiddle h3 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+
+.cardMiddle p {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Bottom Cards */
+.dashboardBottomSide {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.extract,
+.finance {
+  width: 220px;
+  height: 200px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.extract:hover,
+.finance:hover {
+  background: #eaeaea;
+  transform: scale(1.05);
+}
+
+/* Transactions */
+.transactionsHistory {
+  margin-top: 50px;
+  padding: 25px;
+  border-radius: 20px;
+  background: #f8f8f8;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.transactionsHistory h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.transactionsHistory ul {
+  list-style: none;
+  padding: 0;
+}
+
+.transactionsHistory li {
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.creditTx {
+  background: #d4edda;
+  color: #155724;
+}
+
+.debitTx {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboardContent {
+    padding: 25px;
+  }
+
+  .bankCard {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .extract,
+  .finance {
+    width: 100%;
+    max-width: 250px;
+  }
+}
